@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Thierno 16: 31
-//Haytham 
+
 namespace ConsoleApp9
 {
     class Program
@@ -16,38 +15,22 @@ namespace ConsoleApp9
             //pc1.SetAdresseIp("abc");
             var ip1 = pc1.AdresseIp;
             //var ip1 = pc1.GetAdresseIp();
+
+            var c = new Class1 { p1 = 1, p2 = 2 };
+            Console.WriteLine("Salam");
+            Console.Read();
         }
     }
-    class Ordinateur
+    partial class Class1
     {
-        //private string AdresseIp;
-        //public void SetAdresseIp(string ip)
-        //{
-        //    AdresseIp = ip;
-        //}
-        //public string GetAdresseIp()
-        //{
-        //    return AdresseIp;
-        //}
+        public int p2;
+    }
 
-
-        public string AdresseIp
-        {
-            get { return adresseIp; }
-            set
-            {
-                var tab = value.Split('.');
-                if (tab.Length != 4) return;
-                int x = 0;
-                foreach (var n in tab)
-                {
-                    if (!int.TryParse(n, out x) || x < 0 || x > 255) return;
-                }
-
-                adresseIp = value;
-            }
-        }
-        private string adresseIp;
-
+}
+namespace espace1
+{
+    partial class Class1
+    {
+        public int p2;
     }
 }
